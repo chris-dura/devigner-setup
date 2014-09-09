@@ -22,3 +22,18 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE.
 ```
 
+# 2. Shell configuration
+I have a profile with a few aliases and things that make some of the following steps a little easier. I've included my `~/.profile` in this repo for reference.
+
+# 3. Create `~/.local/opt` folder
+The `~/.local/opt` folder is where I put tools that I install in an "ad-hoc" fashion.
+In other words, they're not managed by an automagical package manager like [Homebrew](https://github.com/wilmoore/homebrew-home) or some such.
+This is an arbitrary convention that sort of mirrors how Apple uses a different `/opt` folder on your system.
+But, you could name this folder anything you want like `~/.foo/bar`, just make sure to add it to your `$PATH`.
+
+```bash
+# ~/.profile
+
+export PATH=$HOME/.local/opt:$PATH
+
+```
