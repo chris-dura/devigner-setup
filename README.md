@@ -22,7 +22,7 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE.
 ```
 
-# 2. Shell configuration
+# 2. Shell (Terminal) configuration
 I have a profile with a few aliases and things that make some of the following steps a little easier. I've included my `~/.profile` in this repo for reference.
 
 # 3. Create `~/.local/opt` folder
@@ -37,3 +37,51 @@ But, you could name this folder anything you want like `~/.foo/bar`, just make s
 export PATH=$HOME/.local/opt:$PATH
 
 ```
+
+# 4. Install [Homebrew](https://github.com/wilmoore/homebrew-home)
+
+I've chosen to use the ["Homebrew @ $HOME"](https://github.com/wilmoore/homebrew-home) method of installing Homebrew, instead of what you see on Homebrew's [home page](http://brew.sh/). @wilmoore details his rationale and thinking behind this perfectly valid method of installing Homebrew, but you can do it either way.
+
+# 5. Install [Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+As far as I can tell, installing Homebrew above, also installs Git.
+```bash
+$ git --version
+git version 2.1.0
+
+```
+
+# 5. Create `~/Sites`
+Once upon a time OS X came with a folder called "Sites". This was the default location that would open when you used your Macbook like a web server. That folder has since become somewhat defunct, because Apple wants you to buy the extra OS X Server app from the store.
+
+But, there's nothing stopping you from manually creating it in your HOME directory. You can really name the folder anything you want, like "Projects". If you name it "Sites", you'll get the little extra icon stamped on the folder... which, of course, you could copy to a different folder of your choosing: http://support.apple.com/kb/PH13922
+
+# 6. Set up Git
+
+GitHub has great Help files on [setting up Git](https://help.github.com/articles/set-up-git). At a minimum, you probably just need to set up your username. I typically prefer to [keep my email private](https://help.github.com/articles/keeping-your-email-address-private) and set the global config as my personal GitHub.com account ([@chris-dura](https://github.com/chris-dura)), and if I have enterprise projects where I need to use a different account, I'll set that on a per repo basis.
+
+And, I also [cache my GitHub password](https://help.github.com/articles/caching-your-github-password-in-git) to make cloning easier.
+
+# 7. Clone your repos
+Clone all your projects into that `~/Sites` (or whatever) folder you created.
+```bash
+# Change to `sites` directory
+$ cd sites
+# Clone your fork
+$ git clone https://github.com/chris-dura/scss-lint.git
+```
+Different projects might have different workflows, but my typical setup is to set the `origin` as my fork, and `upstream` is the parent repo.
+
+```bash
+# Set the origin as your fork
+$ git remote add origin https://github.com/chris-dura/scss-lint.git
+#
+$ git remote add upstream https://github.com/
+
+
+
+5. Install MAMP
+- More saavy users may have a need to run specific configurations, but MAMP is the easiest way I've found to get a web server running.
+- Download MAMP (free), change the ports to 80 and 3306, select the "Sites" folder as your document root, click Start Servers.
+- Now open Chrome and browse to http://localhost/ and you should see the Sites directory listing... it works!
+
+
