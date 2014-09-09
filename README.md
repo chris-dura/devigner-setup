@@ -78,10 +78,38 @@ $ cd scss-lint
 $ git remote add origin https://github.com/chris-dura/scss-lint.git
 # Set the upstream as the parent repo
 $ git remote add upstream https://github.com/causes/scss-lint.git
+# Verify the remotes are set up properly
+$ git remote -v
+origin	https://github.com/chris-dura/scss-lint.git (fetch)
+origin	https://github.com/chris-dura/scss-lint.git (push)
+upstream	https://github.com/causes/scss-lint.git (fetch)
+upstream	https://github.com/causes/scss-lint.git (push)
 ```
 
 # 8. Install [MAMP](http://www.mamp.info/en/)
 More saavy users may have a need to run specific web server configurations, but MAMP is the easiest way I've found to get a web server up and running. Download MAMP (free), change the ports to 80 and 3306, select the `~/Sites` folder as your document root, click *Start Servers*. Now, open Chrome and browse to http://localhost/ and you should see the `Sites` directory listing... it works!
 
+# 9. Install [chruby](https://github.com/postmodern/chruby) with Homebrew
+As a web designer, I encounter and use a handful of Ruby-based tools on a daily basis for any given project. So, even though I don't actively develop in the Ruby language, I still need to manage Ruby tools and versions. `chruby` allows switching of different Ruby versions between projects and makes Ruby dependency management much simpler.
 
+```bash
+# Install `chruby`
+$ brew install chruby
+```
+You also need to add the `chruby` script to your `~/.profile`.
+```bash
+# ~/.profile
+
+# Configure `chruby` so that `chruby` Terminal commands work
+source $(brew --prefix chruby)/share/chruby/chruby.sh
+```
+
+# 10. Install `ruby-install` with Homebrew
+- Allows installing a different version of ruby, generally you want to do this instead of using the Ruby that comes pre-installed on the Mac. You usually won't have permission to write to the system Ruby anyway, so using `ruby-install` allows you to do things like `gem install scss-lint` and install gems without errors.
+- You can install Ruby with Homebrew, too, but when using `chruby`, the most common method is to use `ruby-install` instead of Homebrew... I don't know why.
+- It appears that `ruby-install` creates a `~/src` folder in your home. It's ugly, but I don't know if it's needed or not.
+
+```
+% brew install ruby-install
+```
 
