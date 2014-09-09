@@ -104,12 +104,38 @@ You also need to add the `chruby` script to your `~/.profile`.
 source $(brew --prefix chruby)/share/chruby/chruby.sh
 ```
 
-# 10. Install `ruby-install` with Homebrew
-- Allows installing a different version of ruby, generally you want to do this instead of using the Ruby that comes pre-installed on the Mac. You usually won't have permission to write to the system Ruby anyway, so using `ruby-install` allows you to do things like `gem install scss-lint` and install gems without errors.
+# 10. Install [ruby-install](https://github.com/postmodern/ruby-install) with Homebrew
+- `chruby` is just a Ruby "switcher", so you still need a tool that installs different Ruby versions. Generally, you want to install different Ruby versions because you usually won't have permission to write to the system Ruby that comes pre-installed in OS X anyway, so using `ruby-install` allows you to do things like `gem install scss-lint` and install gems without errors.
 - You can install Ruby with Homebrew, too, but when using `chruby`, the most common method is to use `ruby-install` instead of Homebrew... I don't know why.
 - It appears that `ruby-install` creates a `~/src` folder in your home. It's ugly, but I don't know if it's needed or not.
 
-```
-% brew install ruby-install
+```bash
+# Install `ruby-install`
+$ brew install ruby-install
 ```
 
+# 11. Installing gems
+Gems are installed to whichever ruby you're using at the time. The below snippet shows how installing to a specific ruby version works, and switching out of that version, you can no longer get the tool.
+
+```bash
+$ ruby --version
+ruby 2.1.2p95
+$ gem install scss-lint
+$ scss-lint --version
+scss-lint 0.27.0
+
+# Switch to the system ruby
+$ chruby system
+$ ruby --version
+ruby 2.0.0p453
+$ scss-lint --version
+-bash: scss-lint: command not found
+```
+So, you probably want your to configure your Terminal to open to a specific version of Ruby that isn't the system ruby (most likely what you installed in `ruby-install`).
+Adding the `chruby` command to your `.profile` will cause every new **Terminal** session to use the specified ruby, in this case `ruby-2.1.2`.
+
+```bash
+# ~/.profile
+
+$ chruby 2.1.2
+```
