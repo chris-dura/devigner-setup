@@ -163,6 +163,8 @@ Again, an optional step, but PhantomJS is a pretty common way to run headless br
 # install phantomjs with homebrew
 $ brew install phantomjs
 ```
+----
 
+Heavily influenced by many helpful conversations with [@wilmoore](https://github.com/wilmoore), and https://github.com/wilmoore/macbook.
 
 
