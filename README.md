@@ -72,16 +72,16 @@ $ git clone https://github.com/chris-dura/scss-lint.git
 Different projects might have different workflows, but my typical setup is to set the `origin` as my fork, and `upstream` is the parent repo.
 
 ```bash
+# Change to the repo
+$ cd scss-lint
 # Set the origin as your fork
 $ git remote add origin https://github.com/chris-dura/scss-lint.git
-#
-$ git remote add upstream https://github.com/
+# Set the upstream as the parent repo
+$ git remote add upstream https://github.com/causes/scss-lint.git
+```
 
+# 8. Install [MAMP](http://www.mamp.info/en/)
+More saavy users may have a need to run specific web server configurations, but MAMP is the easiest way I've found to get a web server up and running. Download MAMP (free), change the ports to 80 and 3306, select the `~/Sites` folder as your document root, click *Start Servers*. Now, open Chrome and browse to http://localhost/ and you should see the `Sites` directory listing... it works!
 
-
-5. Install MAMP
-- More saavy users may have a need to run specific configurations, but MAMP is the easiest way I've found to get a web server running.
-- Download MAMP (free), change the ports to 80 and 3306, select the "Sites" folder as your document root, click Start Servers.
-- Now open Chrome and browse to http://localhost/ and you should see the Sites directory listing... it works!
 
 
