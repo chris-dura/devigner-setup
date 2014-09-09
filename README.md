@@ -137,5 +137,32 @@ Adding the `chruby` command to your `.profile` will cause every new **Terminal**
 ```bash
 # ~/.profile
 
-$ chruby 2.1.2
+chruby 2.1.2
 ```
+
+# 12. Install [scss-lint](https://github.com/causes/scss-lint) and [Compass](http://compass-style.org/)
+I couldn't do anything with CSS without these two tools, so they're part of my default setup, now.
+```bash
+$ gem install scss-lint
+$ gem install compass
+```
+
+# 13. Install [NVM](https://github.com/creationix/nvm)
+For now, I only use NodeJS on one project, but it's gaining in popularity, and NVM is the defacto way of managing different NodeJS versions across projects.
+
+```bash
+# install nvw with homebrew
+$ brew install nvm
+# install a specific version of NodeJS
+$ nvm install 0.10 
+```
+
+# 14. Install [PhantomJS](http://phantomjs.org/)
+Again, an optional step, but PhantomJS is a pretty common way to run headless browsers for automated testing, and necessary for my current projects.
+```bash
+# install phantomjs with homebrew
+$ brew install phantomjs
+```
+
+
+
