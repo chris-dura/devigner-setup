@@ -147,7 +147,13 @@ $ gem install scss-lint
 $ gem install compass
 ```
 
-# 13. Install [NVM](https://github.com/creationix/nvm)
+# 13. Install [SASS](https://github.com/sass/sass)
+A few SASS versions might be installed as a result of installing `scss-lint` and `compass` above; however, in my current project I need to get the latest SASS version as well because of a particular bug.
+```bash
+$ gem install sass
+```
+
+# 14. Install [NVM](https://github.com/creationix/nvm)
 For now, I only use NodeJS on one project, but it's gaining in popularity, and NVM is the defacto way of managing different NodeJS versions across projects.
 
 ```bash
@@ -157,7 +163,7 @@ $ brew install nvm
 $ nvm install 0.10 
 ```
 
-# 14. Install [PhantomJS](http://phantomjs.org/)
+# 15. Install [PhantomJS](http://phantomjs.org/)
 Again, an optional step, but PhantomJS is a pretty common way to run headless browsers for automated testing, and necessary for my current projects.
 ```bash
 # install phantomjs with homebrew
