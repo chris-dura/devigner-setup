@@ -1,5 +1,18 @@
 
 export GRAILS_HOME=$HOME/.local/opt/grails-2.2.0
+# export GRAILS_HOME=$HOME/.local/opt/grails-2.4.3
+
+export SLIMERJSLAUNCHER=/Applications/Firefox.app/Contents/MacOS/firefox
+
+# Try to use local (project) module first
+export PATH=./node_modules/.bin:$PATH
+
+# This would allow for using a local module, regardless of where in the repo you `cd`
+# export PATH=$(npm bin):$PATH coffee
+# You could alias the above like
+# alias npm-exec='PATH=$(npm bin):$PATH'
+# ... then something like this would execute the local `coffee`
+# npm-exec which coffee
 
 export PATH=$HOME/.homebrew/sbin:$PATH
 export PATH=$HOME/.homebrew/bin:$PATH
@@ -10,6 +23,7 @@ export PATH=$GRAILS_HOME/bin:$PATH
 export MANPATH=$HOME/.homebrew/share/man:$MANPATH
 
 # Configure/run node version manager
+export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Configure `chruby` so that `chruby` Terminal commands work
@@ -53,14 +67,14 @@ alias add-space=addSpace
 # Git Aliases #########
 
 # Add a remote from git
-# usage: $ add-remote {name} {repo uri}
+# usage: $ add-remote {user-name}
 addRemote() {
-  git remote add $1 $2
+  git remote add $1 https://github.webapps.rr.com/$1/${PWD##*/}.git
 }
 alias add-remote=addRemote
 
 # Remove a remote from git
-# usage: $ remove-remote {name}
+# usage: $ remove-remote {user-name}
 removeRemote() {
    git remote rm $1
 }
@@ -79,7 +93,52 @@ doSports() {
 }
 alias do-sports=doSports
 
+doMc() {
+    time for i in *.png; do
+        echo "$i : Resizing image..."
+        # Bill's color-hybrid script
+        # convert -define png:color-type='6' -resize 512x  -extent 512x512 -gravity center -background none "$i"  "../../PNGs/PNG_Color_Hybrid_512x512/$i"
 
-# Compass Aliases #########
+        # Bill's metacritic script
+        # mogrify -define png:color-type='6' -resize x256 *.png
+
+        # My hero logo script
+        # mogrify -background none -define png:color-type='6' -gravity center -extent 1024x768 -path ../bar/ *.png
+
+        # mogrify -define png:color-type='6' -resize 256x -gravity center -path ../mogrify/ *.png
+        # convert -define png:color-type='6' -resize 256x -gravity center "$i" "../convert/$i"
+        mogrify -define png:color-type='6' -path ../mogrify-no-resize/ *.png
+    done;
+
+}
+alias do-mc=doMc
+
+
+
+# SASS Aliases #########
 
 alias compass-prod="compass compile --output-style compressed --force"
+
+
+# OVP Aliases #########
+
+runOvp() {
+   cd ~/sites/ovp2
+   # gulp run-ovp --env=sitb --skipGetPlayer --features="feature.rdvr2_enabled=true" --features="feature.rdvr2_is_default=true"
+   # gulp run-ovp --env=dev
+   gulp run-ovp
+}
+alias run-ovp=runOvp
+
+runOvpSit() {
+  cd ~/sites/ovp2
+  gulp run-ovp --env=sitb
+}
+alias run-ovp-sit=runOvpSit
+
+
+
+flushOvp() {
+  sudo pfctl -F all
+}
+alias flush-ovp=flushOvp
