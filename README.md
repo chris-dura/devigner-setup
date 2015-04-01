@@ -161,6 +161,12 @@ For now, I only use NodeJS on one project, but it's gaining in popularity, and N
 $ brew install nvm
 # install a specific version of NodeJS
 $ nvm install 0.10 
+# or install the latest stable release
+$ nvm install stable
+# set every new shell to use the stable verison of node
+$ nvm alias default stable
+# use a particular version of node for this shell
+$ nvm use 0.10.26
 ```
 
 # 15. Install [PhantomJS](http://phantomjs.org/)
