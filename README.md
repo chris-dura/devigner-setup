@@ -38,25 +38,67 @@ export PATH=$HOME/.local/opt:$PATH
 
 ```
 
-# 4. Install [Homebrew](https://github.com/wilmoore/homebrew-home)
-
-I've chosen to use the ["Homebrew @ $HOME"](https://github.com/wilmoore/homebrew-home) method of installing Homebrew, instead of what you see on Homebrew's [home page](http://brew.sh/). @wilmoore details his rationale and thinking behind this perfectly valid method of installing Homebrew, but you can do it either way.
-
-# 5. Install [Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)
-As far as I can tell, installing Homebrew above, also installs Git.
-```bash
-$ git --version
-git version 2.1.0
-
-```
-
 # 5. Create `~/Sites`
 Once upon a time OS X came with a folder called "Sites". This was the default location that would open when you used your Macbook like a web server. That folder has since become somewhat defunct, because Apple wants you to buy the extra OS X Server app from the store.
 
-But, there's nothing stopping you from manually creating it in your HOME directory. You can really name the folder anything you want, like "Projects". If you name it "Sites", you'll get the little extra icon stamped on the folder... which, of course, you could copy to a different folder of your choosing: http://support.apple.com/kb/PH13922
+But, there's nothing stopping you from manually creating it in your HOME directory. You can really name the folder anything you want, like "Projects". If you name it "Sites", you'll get the little extra icon stamped on the folder... which, of course, you could [copy to a different folder](https://support.apple.com/kb/PH19073?locale=en_US) of your choosing.
+
+# 5. Install [Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+Git is the preferred version control system.
+
+# 4. Install [Homebrew](http://brew.sh/)
+In the my latest incarnation of environment, I've gone with the default method of installing Homebrew.
+
+However, I've previously used the ["Homebrew @ $HOME"](https://github.com/wilmoore/homebrew-home) method of installing Homebrew, instead of what you see on Homebrew's [home page](http://brew.sh/). @wilmoore details his rationale and thinking behind this perfectly valid method of installing Homebrew, but you can do it either way.
+
+# 9. Install [chruby](https://github.com/postmodern/chruby) with Homebrew
+As a web designer, I encounter and use a handful of Ruby-based tools on a daily basis for any given project. So, even though I don't actively develop in the Ruby language, I still need to manage Ruby tools and versions. `chruby` allows switching of different Ruby versions between projects and makes Ruby dependency management much simpler.
+
+```bash
+# Install `chruby`
+$ brew install chruby
+```
+You also need to add the `chruby` script to your `~/.profile`.
+```bash
+# ~/.profile
+
+# Configure `chruby` so that `chruby` Terminal commands work
+source $(brew --prefix chruby)/share/chruby/chruby.sh
+```
+
+# 10. Install [ruby-install](https://github.com/postmodern/ruby-install) with Homebrew
+- `chruby` is just a Ruby "switcher", so you still need a tool that installs different Ruby versions. Generally, you want to install different Ruby versions because you usually won't have permission to write to the system Ruby that comes pre-installed in OS X anyway, so using `ruby-install` allows you to do things like `gem install scss-lint` and install gems without errors.
+- You can install Ruby with Homebrew, too, but when using `chruby`, the most common method is to use `ruby-install` instead of Homebrew... I don't know why, probably because they're both maintained by @postmodern.
+- ~~It appears that `ruby-install` creates a `~/src` folder in your home. It's ugly, but I don't know if it's needed or not.~~ The `~/src` folder (or at least its contents) will be cleaned up by passing the `--cleanup` option in the command line.
+
+```bash
+# Install `ruby-install`
+$ brew install ruby-install
+# Install latest stable Ruby to `~/.rubies`
+$ ruby-install ruby --cleanup
+```
+
+# 14. Install [NVM](https://github.com/creationix/nvm) and [NodeJS](https://nodejs.org/)
+For now, I only use NodeJS on one project, but it's ~~gaining in popularity~~ the industry standard, and NVM is the defacto way of managing different NodeJS versions across projects.
+
+```bash
+# install nvw with homebrew
+$ brew install nvm
+...
+# follow additional instructions, like add `.nvm` and copy `nvm-exec`, etc...
+
+# Now, install the latest stable release of NodeJS
+$ nvm install stable
+# OR, install a specific version of NodeJS
+$ nvm install 0.10
+
+# set every new shell to use the stable verison of node
+$ nvm alias default stable
+# use a particular version of node for this shell
+$ nvm use 0.10.26
+```
 
 # 6. Set up Git
-
 GitHub has great Help files on [setting up Git](https://help.github.com/articles/set-up-git). At a minimum, you probably just need to set up your username. I typically prefer to [keep my email private](https://help.github.com/articles/keeping-your-email-address-private) and set the global config as my personal GitHub.com account ([@chris-dura](https://github.com/chris-dura)), and if I have enterprise projects where I need to use a different account, I'll set that on a per repo basis.
 
 And, I also [cache my GitHub password](https://help.github.com/articles/caching-your-github-password-in-git) to make cloning easier.
@@ -86,33 +128,18 @@ upstream	https://github.com/causes/scss-lint.git (fetch)
 upstream	https://github.com/causes/scss-lint.git (push)
 ```
 
+
+
+
 # 8. Install [MAMP](http://www.mamp.info/en/)
 More saavy users may have a need to run specific web server configurations, but MAMP is the easiest way I've found to get a web server up and running. Download MAMP (free), change the ports to 80 and 3306, select the `~/Sites` folder as your document root, click *Start Servers*. Now, open Chrome and browse to http://localhost/ and you should see the `Sites` directory listing... it works!
 
-# 9. Install [chruby](https://github.com/postmodern/chruby) with Homebrew
-As a web designer, I encounter and use a handful of Ruby-based tools on a daily basis for any given project. So, even though I don't actively develop in the Ruby language, I still need to manage Ruby tools and versions. `chruby` allows switching of different Ruby versions between projects and makes Ruby dependency management much simpler.
 
-```bash
-# Install `chruby`
-$ brew install chruby
-```
-You also need to add the `chruby` script to your `~/.profile`.
-```bash
-# ~/.profile
 
-# Configure `chruby` so that `chruby` Terminal commands work
-source $(brew --prefix chruby)/share/chruby/chruby.sh
-```
 
-# 10. Install [ruby-install](https://github.com/postmodern/ruby-install) with Homebrew
-- `chruby` is just a Ruby "switcher", so you still need a tool that installs different Ruby versions. Generally, you want to install different Ruby versions because you usually won't have permission to write to the system Ruby that comes pre-installed in OS X anyway, so using `ruby-install` allows you to do things like `gem install scss-lint` and install gems without errors.
-- You can install Ruby with Homebrew, too, but when using `chruby`, the most common method is to use `ruby-install` instead of Homebrew... I don't know why.
-- It appears that `ruby-install` creates a `~/src` folder in your home. It's ugly, but I don't know if it's needed or not.
 
-```bash
-# Install `ruby-install`
-$ brew install ruby-install
-```
+
+
 
 # 11. Installing gems
 Gems are installed to whichever ruby you're using at the time. The below snippet shows how installing to a specific ruby version works, and switching out of that version, you can no longer get the tool.
@@ -132,49 +159,31 @@ $ scss-lint --version
 -bash: scss-lint: command not found
 ```
 So, you probably want your to configure your Terminal to open to a specific version of Ruby that isn't the system ruby (most likely what you installed in `ruby-install`).
-Adding the `chruby` command to your `.profile` will cause every new **Terminal** session to use the specified ruby, in this case `ruby-2.1.2`.
+Adding the `chruby` command to your `.profile` will cause every new **Terminal** session to use the specified ruby, in this case `ruby-2.1.3`.
 
 ```bash
 # ~/.profile
 
-chruby 2.1.2
+chruby 2.1.3
 ```
 
-# 12. Install [scss-lint](https://github.com/causes/scss-lint) and [Compass](http://compass-style.org/)
-I couldn't do anything with CSS without these two tools, so they're part of my default setup, now.
+# 1. Install [Bundler](http://bundler.io/)
+Bundler is the easiest way to install/use different gems and gem versions on a per-project basis. All versions of a particluar gem are still installed "globally", however when in the project folder, the `bundle-exec` command allows you to target a particular gem version.
 ```bash
-$ gem install scss-lint
-$ gem install compass
+# Install bundler
+$ gem install bundler
+# navigate to the project
+$ cd projects/foo
+# install the gems needed for the `foo` project
+$ bundle install
+# execute the gem specific to the `foo` project
+$ bundle-exec scss-lint --version
+scss-lint 0.27.0
+# Or, execute the most newest version of the gem
+$ scss-lint --version
+scss-lint 0.31.0
 ```
 
-# 13. Install [SASS](https://github.com/sass/sass)
-A few SASS versions might be installed as a result of installing `scss-lint` and `compass` above; however, in my current project I need to get the latest SASS version as well because of a particular bug.
-```bash
-$ gem install sass
-```
-
-# 14. Install [NVM](https://github.com/creationix/nvm)
-For now, I only use NodeJS on one project, but it's gaining in popularity, and NVM is the defacto way of managing different NodeJS versions across projects.
-
-```bash
-# install nvw with homebrew
-$ brew install nvm
-# install a specific version of NodeJS
-$ nvm install 0.10 
-# or install the latest stable release
-$ nvm install stable
-# set every new shell to use the stable verison of node
-$ nvm alias default stable
-# use a particular version of node for this shell
-$ nvm use 0.10.26
-```
-
-# 15. Install [PhantomJS](http://phantomjs.org/)
-Again, an optional step, but PhantomJS is a pretty common way to run headless browsers for automated testing, and necessary for my current projects.
-```bash
-# install phantomjs with homebrew
-$ brew install phantomjs
-```
 ----
 
 Heavily influenced by many helpful conversations with [@wilmoore](https://github.com/wilmoore), and https://github.com/wilmoore/macbook.
