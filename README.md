@@ -1,7 +1,8 @@
-[![License](http://img.shields.io/:license-MIT-blue.svg)](LICENSE)
 
 devigner-setup
 ==============
+
+[![License](http://img.shields.io/:license-MIT-blue.svg)](LICENSE)
 
 Generic development environment setup for **Designers** on a Macbook Pro running Mavericks.
 
