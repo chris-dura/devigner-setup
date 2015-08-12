@@ -183,6 +183,7 @@ export PATH=$HOME/.local/opt:$PATH
 
 ----
 
+## Inspiration
 Heavily influenced by many helpful conversations with [@wilmoore](https://github.com/wilmoore), and https://github.com/wilmoore/macbook.
 
 
