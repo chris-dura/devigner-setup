@@ -4,7 +4,7 @@ devigner-setup
 
 [![License](http://img.shields.io/:license-MIT-blue.svg)](LICENSE)
 
-Generic development environment setup for **Designers** on a Macbook Pro running Mavericks.
+Generic development environment setup for **Designers** on a Macbook Pro running OS X Yosemite.
 
 # Why not use Migration Assistant?
 1. I like starting from scratch and only installing the things I need right now, instead of carrying over all the outdated stuff that accrues over the years.
