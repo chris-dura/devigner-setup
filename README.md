@@ -162,7 +162,12 @@ upstream	https://github.com/causes/scss-lint.git (push)
 ```
 
 # Install [MAMP](http://www.mamp.info/en/)
-More saavy users may have a need to run specific web server configurations, but MAMP is the easiest way I've found to get a web server up and running. Download MAMP (free), change the ports to 80 and 3306, select the `~/Sites` folder as your document root, click *Start Servers*. Now, open Chrome and browse to http://localhost/ and you should see the `Sites` directory listing... it works!
+More saavy users may have a need to run specific web server configurations, but MAMP is the easiest way I've found to get a web server up and running.
+- Download MAMP (free)
+- Launch MAMP and open **Preferences...**
+- Change the web and MySQL ports to 80 and 3306
+- Set Web Server to the `~/Sites` folder as your document root
+- Click **Start Servers** and browse to http://localhost/ and you should see the `Sites` directory listing... it works!
 
 ----
 
