@@ -1,3 +1,5 @@
+[![License](http://img.shields.io/:license-MIT-blue.svg)](LICENSE)
+
 devigner-setup
 ==============
 
