@@ -1,8 +1,8 @@
 
-export GRAILS_HOME=$HOME/.local/opt/grails-2.2.0
+# export GRAILS_HOME=$HOME/.local/opt/grails-2.2.0
 # export GRAILS_HOME=$HOME/.local/opt/grails-2.4.3
 
-export SLIMERJSLAUNCHER=/Applications/Firefox.app/Contents/MacOS/firefox
+# export SLIMERJSLAUNCHER=/Applications/Firefox.app/Contents/MacOS/firefox
 
 # Try to use local (project) module first
 export PATH=./node_modules/.bin:$PATH
@@ -14,13 +14,13 @@ export PATH=./node_modules/.bin:$PATH
 # ... then something like this would execute the local `coffee`
 # npm-exec which coffee
 
-export PATH=$HOME/.homebrew/sbin:$PATH
-export PATH=$HOME/.homebrew/bin:$PATH
-export PATH=$HOME/.homebrew/opt/ruby/bin:$PATH
-export PATH=$HOME/.local/opt:$PATH
-export PATH=$GRAILS_HOME/bin:$PATH
+# export PATH=$HOME/.homebrew/sbin:$PATH
+# export PATH=$HOME/.homebrew/bin:$PATH
+# export PATH=$HOME/.homebrew/opt/ruby/bin:$PATH
+# export PATH=$HOME/.local/opt:$PATH
+# export PATH=$GRAILS_HOME/bin:$PATH
 
-export MANPATH=$HOME/.homebrew/share/man:$MANPATH
+# export MANPATH=$HOME/.homebrew/share/man:$MANPATH
 
 # Configure/run node version manager
 export NVM_DIR=~/.nvm
@@ -31,7 +31,7 @@ source $(brew --prefix chruby)/share/chruby/chruby.sh
 # Change the default version of ruby
 # Can also be done by enabling auto-switching in `chruby`, and
 # using a `.ruby-version` file.
-chruby 2.1.2
+chruby 2.1.3
 
 
 # Aliases #########
@@ -41,7 +41,7 @@ chruby 2.1.2
 alias open-profile='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/.profile'
 
 # Show hidden files in finder
-# usage: % show-hidden {true,false}
+# usage: $ show-hidden {true,false}
 showHidden() {
    defaults write com.apple.finder AppleShowAllFiles $1
    killall Finder
@@ -53,7 +53,7 @@ alias print-path="echo $PATH | tr ':' '\n'"
 alias print-manpath="echo $MANPATH | tr ':' '\n'"
 
 # Adds spaces to Dock
-# usage % add-space {n}
+# usage $ add-space {n}
 addSpace() {
    for ((i=0; i<$1; i++)); do
        defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
