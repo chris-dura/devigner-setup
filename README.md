@@ -13,6 +13,9 @@ Generic development environment setup for **Designers** on a Macbook Pro running
 
 # Stuff to do _before_ you wipe the Macbook
 There's some things that need to be manually taken care of because they may be lost entirely, or it's just a pain to get them back by search the dregs of the Time Machine.
+#### SourceTree
+- Push your outstanding stashes up to branches on the `origin`, so you can grab them later.
+
 #### Sublime Text 3
 - Make sure to save off any unsaved files stored in the session buffer, so that they can be backed up by Time Machine and loaded back in later.
 - Search History will also be lost, so if there are complicated excludes or what-not, you should quickly make a note of them.
