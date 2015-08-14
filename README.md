@@ -11,6 +11,13 @@ Generic development environment setup for **Designers** on a Macbook Pro running
 2. A number of people I have talked to (designers and developers alike) have had mixed success with using **Migration Assistant**. Some have claimed it sometimes has problems with "dot files", others have had problems due all the enterprise security and encryption hula-baloo that our IT department is required to install. Regardless, I've personally decided **Migration Assistant** is a 50/50 proposition, so I just don't mess with it.
 3. That being said, **Time Machine** still works beautifully to move individual files to my new machine, so I always start the process by making sure I have a clean, full **Time Machine** backup of my old laptop.
 
+# Stuff to do _before_ you wipe the Macbook
+There's some things that need to be manually taken care of because they may be lost entirely, or it's just a pain to get them back by search the dregs of the Time Machine.
+#### Sublime Text 3
+- Make sure to save off any unsaved files stored in the session buffer, so that they can be backed up by Time Machine and loaded back in later.
+- Search History will also be lost, so if there are complicated excludes or what-not, you should quickly make a note of them.
+- Preferences can be found in `~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings`, but it doesn't take much to set it up again.
+
 # Install Xcode and its command-line tools
 
 Go to the **App Store** and install **Xcode**. In previous versions of **Xcode**, you had to download and install the command-line tools separately, but after installing **Xcode** on my brand new machine, it seems that they're now included by default.
