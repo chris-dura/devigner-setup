@@ -98,6 +98,13 @@ $ nvm alias default stable
 $ nvm use 0.10.26
 ```
 
+## Update [NPM](http://www.npmjs.com)
+NPM (node package manager) comes installed with nvm/Node; however, npm updates much more frequently, so it's best to make sure you have the latest version. Installing/updating npm via Homebrew has been known to cause some issues, so use the [recommended method](https://docs.npmjs.com/getting-started/installing-node) to update to the latest version of npm.
+```bash
+# update npm to latest version
+$ sudo npm install npm -g
+```
+
 # Installing gems
 Gems are installed to whichever ruby you're using at the time. The below snippet shows how installing to a specific ruby version works, and switching out of that version, you can no longer get the tool.
 
