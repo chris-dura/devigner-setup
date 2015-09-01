@@ -12,7 +12,7 @@ Generic development environment setup for **Designers** on a Macbook Pro running
 3. That being said, **Time Machine** still works beautifully to move individual files to my new machine, so I always start the process by making sure I have a clean, full **Time Machine** backup of my old laptop.
 
 # Stuff to do _before_ you wipe the Macbook
-There's some things that need to be manually taken care of because they may be lost entirely, or it's just a pain to get them back by search the dregs of the Time Machine.
+There's some things that need to be manually taken care of because they may be lost entirely, or it's just a pain to get them back by searching through the dregs of the Time Machine.
 #### SourceTree
 - Push your outstanding stashes up to branches on the `origin`, so you can grab them later.
 
