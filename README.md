@@ -188,7 +188,7 @@ More saavy users may have a need to run specific web server configurations, but 
 
 ----
 
-Actually haven't done this in the latest incarnation of my invironment...
+Actually haven't done this in the latest incarnation of my environment...
 
 # Create `~/.local/opt` folder
 The `~/.local/opt` folder is where I put tools that I install in an "ad-hoc" fashion.
