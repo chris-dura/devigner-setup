@@ -105,6 +105,15 @@ NPM (node package manager) comes installed with nvm/Node; however, npm updates m
 $ sudo npm install npm -g
 ```
 
+## Installing npm packages globally
+TODO: document this.
+
+If you try to install an npm package globally, and you see permission or access errors, such as `EPERM` or `EACCESS`, do not use sudo as a work-around.
+
+Look at the following Guides:
+https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+https://docs.npmjs.com/getting-started/fixing-npm-permissions
+
 # Installing gems
 Gems are installed to whichever ruby you're using at the time. The below snippet shows how installing to a specific ruby version works, and switching out of that version, you can no longer get the tool.
 
