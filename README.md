@@ -158,7 +158,7 @@ scss-lint 0.31.0
 ```
 
 # Set up and configure Git
-GitHub has great Help files on [setting up Git](https://help.github.com/articles/set-up-git). At a minimum, you probably just need to set up your username. I typically prefer to [keep my email private](https://help.github.com/articles/keeping-your-email-address-private) and set the global config as my personal GitHub.com account ([@chris-dura](https://github.com/chris-dura)), and if I have enterprise projects where I need to use a different account, I'll set that on a per repo basis.
+GitHub has great Help files on [setting up Git](https://help.github.com/articles/set-up-git). At a minimum, you probably just need to set up your username. I typically prefer to [keep my email private](https://help.github.com/articles/keeping-your-email-address-private) and set the global config as my personal GitHub.com account ([@chris-dura](https://github.com/chris-dura)), and if I have enterprise projects where I need to use a different account, I'll set that on a [per repo](https://help.github.com/articles/setting-your-username-in-git/) basis.
 
 And, I also [cache my GitHub password](https://help.github.com/articles/caching-your-github-password-in-git) to make cloning easier.
 
