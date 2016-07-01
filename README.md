@@ -195,6 +195,9 @@ More saavy users may have a need to run specific web server configurations, but 
 - Set Web Server to the `~/Sites` folder as your document root
 - Click **Start Servers** and browse to http://localhost/ and you should see the `Sites` directory listing... it works!
 
+# Set up Sublime Text
+The CSSComb plugin needs to have a symlink to node in `/usr/local/bin`, see [sublime plugin](https://github.com/csscomb/sublime-csscomb) for docs.
+
 ----
 
 Actually haven't done this in the latest incarnation of my environment...
