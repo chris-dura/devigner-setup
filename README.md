@@ -88,12 +88,12 @@ $ brew install nvm
 # follow additional instructions, like add `.nvm` and copy `nvm-exec`, etc...
 
 # Now, install the latest stable release of NodeJS
-$ nvm install stable
+$ nvm install node
 # OR, install a specific version of NodeJS
 $ nvm install 0.10
 
 # set every new shell to use the stable verison of node
-$ nvm alias default stable
+$ nvm alias default node
 # use a particular version of node for this shell
 $ nvm use 0.10.26
 ```
