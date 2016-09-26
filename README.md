@@ -82,7 +82,7 @@ $ ruby-install ruby --cleanup
 For now, I only use NodeJS on one project, but it's ~~gaining in popularity~~ the industry standard, and NVM is the defacto way of managing different NodeJS versions across projects.
 
 ```bash
-# install nvw with homebrew
+# install nvm with homebrew
 $ brew install nvm
 ...
 # follow additional instructions, like add `.nvm` and copy `nvm-exec`, etc...
