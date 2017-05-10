@@ -23,16 +23,9 @@ There's some things that need to be manually taken care of because they may be l
 
 # Install Xcode and its command-line tools
 
-Go to the **App Store** and install **Xcode**. In previous versions of **Xcode**, you had to download and install the command-line tools separately, but after installing **Xcode** on my brand new machine, it seems that they're now included by default.
-To make sure (pun intended), just open a new Terminal window and type `make --version`. If you get something like below, you should be good.
-
+Running the command below will launch a popup where you can install just the commmand line tools, or download Xcode from the app store.
 ```bash
-$ make --version
-GNU Make 3.81
-Copyright (C) 2006  Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.
-There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.
+$ xcode-select --install
 ```
 
 # Shell (Terminal) configuration
@@ -47,11 +40,16 @@ But, there's nothing stopping you from manually creating it in your HOME directo
 Git is the preferred version control system.
 
 # Install [Homebrew](http://brew.sh/)
+**Update: I don't use Homebrew anymore, all the tools are better installed via other methods like *cURL*.**
+
 In the my latest incarnation of environment, I've gone with the default method of installing Homebrew.
 
 However, I've previously used the ["Homebrew @ $HOME"](https://github.com/wilmoore/homebrew-home) method of installing Homebrew, instead of what you see on Homebrew's [home page](http://brew.sh/). @wilmoore details his rationale and thinking behind this perfectly valid method of installing Homebrew, but you can do it either way.
 
-# Install [chruby](https://github.com/postmodern/chruby) with Homebrew
+# Install [chruby](https://github.com/postmodern/chruby)
+
+**Update: I've successfully removed my dependency on Ruby tools; however, if I still need `chruby`, it's better to install it via methods other than Homebrew.**
+
 As a web designer, I encounter and use a handful of Ruby-based tools on a daily basis for any given project. So, even though I don't actively develop in the Ruby language, I still need to manage Ruby tools and versions. `chruby` allows switching of different Ruby versions between projects and makes Ruby dependency management much simpler.
 
 ```bash
@@ -79,11 +77,14 @@ $ ruby-install ruby --cleanup
 ```
 
 # Install [NVM](https://github.com/creationix/nvm) and [NodeJS](https://nodejs.org/)
+
+**Update: Do not install NVM via Homebrew, use the instructions on NVM's documentation.**
+
 For now, I only use NodeJS on one project, but it's ~~gaining in popularity~~ the industry standard, and NVM is the defacto way of managing different NodeJS versions across projects.
 
 ```bash
-# install nvm with homebrew
-$ brew install nvm
+# install nvm according to their documentation
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 ...
 # follow additional instructions, like add `.nvm` and copy `nvm-exec`, etc...
 
