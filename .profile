@@ -40,6 +40,10 @@ chruby 2.1.3
 #alias openprofile='open ~/.profile'
 alias open-profile='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/.profile'
 
+# Open hosts file with Sublime Text
+#alias openprofile='open ~/.profile'
+alias open-hosts='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /private/etc/hosts'
+
 # Show hidden files in finder
 # usage: $ show-hidden {true,false}
 showHidden() {
