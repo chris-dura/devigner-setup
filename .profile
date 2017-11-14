@@ -23,8 +23,8 @@ export PATH=./node_modules/.bin:$PATH
 # export MANPATH=$HOME/.homebrew/share/man:$MANPATH
 
 # Configure/run node version manager
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Configure `chruby` so that `chruby` Terminal commands work
 source $(brew --prefix chruby)/share/chruby/chruby.sh
