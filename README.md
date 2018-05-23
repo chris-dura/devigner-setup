@@ -88,14 +88,19 @@ $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh |
 ...
 # follow additional instructions, like add `.nvm` and copy `nvm-exec`, etc...
 
-# Now, install the latest stable release of NodeJS
+# Install the latest LTS release of NodeJS (recommended)
+$ nvm install --lts
+# OR, install the latest stable release of NodeJS
 $ nvm install node
 # OR, install a specific version of NodeJS
 $ nvm install 0.10
 
-# set every new shell to use the stable verison of node
+# Set every new shell to use the latest LTS version of node (recommended)
+$ nvm alias default lts/*
+# OR, set every new shell to use the stable verison of node
 $ nvm alias default node
-# use a particular version of node for this shell
+
+# Use a particular version of node for this shell
 $ nvm use 0.10.26
 ```
 
