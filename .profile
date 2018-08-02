@@ -1,4 +1,6 @@
 
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
+
 # export GRAILS_HOME=$HOME/.local/opt/grails-2.2.0
 # export GRAILS_HOME=$HOME/.local/opt/grails-2.4.3
 
@@ -23,6 +25,8 @@ export PATH=./node_modules/.bin:$PATH
 # export MANPATH=$HOME/.homebrew/share/man:$MANPATH
 
 # Configure/run node version manager
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -67,6 +71,12 @@ addSpace() {
 }
 alias add-space=addSpace
 
+# Show globally installed npm packages
+npmListGlobal() {
+  npm list -g --depth=0
+}
+alias npm-list-g=npmListGlobal
+
 
 # Git Aliases #########
 
@@ -83,6 +93,22 @@ removeRemote() {
    git remote rm $1
 }
 alias remove-remote=removeRemote
+
+# Clone and set user to charter email
+# usage: $ charter-clone {group-name} {repo-name}
+charterClone() {
+  cd ~/code && git clone git@gitlab.spectrumxg.com:$1/$2.git && cd $2 && git config user.email "chris.dura@charter.com"
+}
+alias charter-clone=charterClone
+
+
+# FFmpeg Aliases #########
+
+convertToWebM() {
+  # ffmpeg -i input-file.mp4 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis output-file.webm
+  ffmpeg -i $1 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis $2
+}
+alias convert-to-webm=convertToWebM
 
 
 # ImageMagick Aliases #########
@@ -127,7 +153,7 @@ alias compass-prod="compass compile --output-style compressed --force"
 # OVP Aliases #########
 
 runOvp() {
-   cd ~/sites/ovp2
+   cd ~/projects/ovp2
    # gulp run-ovp --env=sitb --skipGetPlayer --features="feature.rdvr2_enabled=true" --features="feature.rdvr2_is_default=true"
    # gulp run-ovp --env=dev
    gulp run-ovp
@@ -135,7 +161,7 @@ runOvp() {
 alias run-ovp=runOvp
 
 runOvpSit() {
-  cd ~/sites/ovp2
+  cd ~/projects/ovp2
   gulp run-ovp --env=sitb
 }
 alias run-ovp-sit=runOvpSit
@@ -146,3 +172,6 @@ flushOvp() {
   sudo pfctl -F all
 }
 alias flush-ovp=flushOvp
+
+# THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/CDura/.gvm/bin/gvm-init.sh" ]] && source "/Users/CDura/.gvm/bin/gvm-init.sh"
